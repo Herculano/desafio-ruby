@@ -32,6 +32,7 @@ gem 'remotipart', '~> 1.2'
 gem 'rails_admin_rollincode', '~> 1.0'
 gem "devise"
 gem 'kaminari-mongoid'
+gem 'sidekiq'
 
 gem 'httparty'
 # Use Redis adapter to run Action Cable in production

@@ -9,4 +9,18 @@ class Product
 
   belongs_to :store
   validates_presence_of :website, :name, :logo_url, :email
+
+  rails_admin do
+    list do
+      field :avatar do
+        pretty_value do
+          bindings[:view].tag(:img, { :src => bindings[:object].avatar, style: 'width:100px' })
+        end
+      end
+      field :name
+      field :price
+      field :installments
+      field :store
+    end
+  end
 end

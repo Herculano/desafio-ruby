@@ -5,7 +5,7 @@ namespace :populate_products do
             {"_from" => "50", "_to" => "99"}]
     product_list = []
     queries.map do |q|
-      response = HTTParty.get("#{store.website}/api/catalog_system/pub/products/search", :query => q).parsed_response
+      response = HTTParty.get("http://www.timex.com.br/api/catalog_system/pub/products/search", :query => q).parsed_response
       response.map do |r|
         product_list << {
           image: r["items"][0]["images"][0]["imageUrl"],

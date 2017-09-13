@@ -15,7 +15,7 @@ pt-BR:
       product:
         name: Nome
         price: Preço
-        number_installments: Parcelas
+        installments: Parcelas
         store: Loja
         avatar: Imagem
         external_link: Link
