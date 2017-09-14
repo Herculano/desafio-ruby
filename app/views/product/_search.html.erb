@@ -1,0 +1,6 @@
+<div class="search">
+  <%= form_tag product_path, method: :get,  class:  'form-inline' do %>
+    <%= text_field_tag :s, params[:s], placeholder: 'Buscar', class: 'form-control' %>
+    <%= submit_tag "Buscar", class: 'btn btn-primary' %>
+  <% end %>
+</div>

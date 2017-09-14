@@ -1,3 +1,4 @@
-// Place all the styles related to the product controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'variables/_general';
+.wrap_products{
+  margin-top: $space_top;
+}

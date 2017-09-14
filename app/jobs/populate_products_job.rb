@@ -20,6 +20,7 @@ class PopulateProductsJob < ApplicationJob
       end
     end
     Product.collection.insert_many(product_list)
+    Product.reindex
   end
 
   private

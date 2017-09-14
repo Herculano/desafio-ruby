@@ -9,6 +9,10 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container-fluid">
+      <%= render 'shared/navigation' %>
+      <div class="alert alert-danger hide"></div>
+      <%= yield %>
+    </div>
   </body>
 </html>
