@@ -11,8 +11,9 @@ pt-BR:
         profile: Perfil
       store:
         name: Nome
-        logo: Logo da loja (Url)
+        logo: Logo
         total_products: Total de produtos
+        homestore: Loja principal?
       product:
         name: Nome
         price: Preço

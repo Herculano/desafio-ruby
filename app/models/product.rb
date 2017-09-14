@@ -8,7 +8,7 @@ class Product
   field :external_link, type: String
 
   belongs_to :store
-  validates_presence_of :website, :name, :logo_url, :email
+  validates_presence_of :name, :external_link, :avatar
 
   rails_admin do
     list do

@@ -1,0 +1,14 @@
+<div class="stores">
+  <% @stores.each_slice(4) do |chunk| %>
+    <div class="row">
+      <% chunk.each do |store| %>
+        <div class="col-md-3">
+          <%= link_to product_path(store.slug) do %>
+            <%= image_tag store.logo %>
+            <p><%= store.name %></p>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

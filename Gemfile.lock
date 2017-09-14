@@ -119,6 +119,9 @@ GEM
     kaminari-activerecord (1.0.1)
       activerecord
       kaminari-core (= 1.0.1)
+    kaminari-bootstrap3 (0.1.0)
+      kaminari
+      rails
     kaminari-core (1.0.1)
     kaminari-mongoid (1.0.1)
       kaminari-core (~> 1.0)
@@ -280,6 +283,7 @@ DEPENDENCIES
   devise
   httparty
   jbuilder (~> 2.5)
+  kaminari-bootstrap3
   kaminari-mongoid
   listen (>= 3.0.5, < 3.2)
   mongoid (~> 6.1.0)
