@@ -1,23 +1,26 @@
 namespace :populate_products do
   task :update => :environment do
     require 'httparty'
-    queries = [{"_from" => "0", "_to" => "49"},
-            {"_from" => "50", "_to" => "99"}]
+    ROWS = 49
+    store = Store.find("59b9a5753b413207bdba6fcd")
+
     product_list = []
-    queries.map do |q|
-      response = HTTParty.get("http://www.timex.com.br/api/catalog_system/pub/products/search", :query => q).parsed_response
+     (store.total_products/ROWS).ceil.times do |page|
+
+      response = HTTParty.get("#{store.website}/api/catalog_system/pub/products/search",
+                 :query => "_from=#{page*ROWS}&_to=#{(page+1)*ROWS}").parsed_response
+
       response.map do |r|
         product_list << {
-          image: r["items"][0]["images"][0]["imageUrl"],
+          avatar: r["items"][0]["images"][0]["imageUrl"],
           external_link: r["link"],
           name: r["productName"],
-          price: r["items"][0]["sellers"][0]["commertialOffer"]["Price"]
+          installments: r["items"][0]["sellers"][0]["commertialOffer"]["Installments"].map { |c| c["NumberOfInstallments"] }.max,
+          price: r["items"][0]["sellers"][0]["commertialOffer"]["Price"],
+          store_id: store.id
         }
-
-       #TODO: Installments
       end
     end
-    puts product_list
-    #Product.create!(product_list)
+    Product.collection.insert_many(product_list)
   end
 end

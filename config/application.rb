@@ -23,6 +23,8 @@ module FullLab
 
     config.i18n.default_locale = "pt-BR"
 
+    config.active_job.queue_adapter = :sidekiq
+
     ENV['RAILS_ADMIN_THEME'] = 'rollincode'
 
     # Settings in config/environments/* take precedence over those specified here.
