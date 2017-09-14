@@ -158,4 +158,4 @@ test:
 production:
   clients:
     default:
-      url: ENV["BONSAI_URL"]
+      uri: <%= ENV["BONSAI_URL"] %>
