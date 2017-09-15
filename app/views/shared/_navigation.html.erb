@@ -1,19 +1,28 @@
 <div class="navbar navbar-fixed-top navbar-default">
     <div class="navbar-inner">
 
-
-      <ul class="nav navbar-nav">
-        <li class="<%= 'active' if controller_name == 'stores' %>">
-          <%= link_to 'Lojas', store_path %>
-        </li>
-      </ul>
-
-      <% if current_user %>
-        <span class="navbar-text pull-right">Olá <%= current_user.email %>,
-        <%= link_to "Sair", destroy_user_session_path, method: :delete, class: 'log-off' %> </span>
-      <% else %>
-        <span class="navbar-text pull-right">Não está logado, <%= link_to "Entrar", new_user_session_path, class: 'log-in' %> </span>
-      <% end %>
+      <div class="row">
+        <div class="col-md-4">
+          <ul class="nav navbar-nav">
+            <li class="<%= 'active' if controller_name == 'store' %>">
+              <%= link_to 'Lojas', store_path %>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4 text-center">
+          <% if controller_name == 'product' %>
+          <%= image_tag store_logo, height: "50px" %>
+          <% end %>
+        </div>
+        <div class="col-md-4">
+          <% if current_user %>
+            <span class="navbar-text pull-right">Olá <%= current_user.email %>,
+            <%= link_to "Sair", destroy_user_session_path, method: :delete, class: 'log-off' %> </span>
+          <% else %>
+            <span class="navbar-text pull-right"><%= link_to "Entrar", new_user_session_path, class: 'log-in' %> </span>
+          <% end %>
+        </div>
+      </div>
 
     </div>
 </div>

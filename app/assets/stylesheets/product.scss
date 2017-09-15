@@ -1,4 +1,8 @@
 @import 'variables/_general';
 .wrap_products{
   margin-top: $space_top;
+  .img-responsive{
+    width: 55%;
+    margin-left: 25%;
+  }
 }

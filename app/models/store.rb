@@ -16,7 +16,7 @@ class Store
   validates_uniqueness_of :slug
   validates_uniqueness_of :homestore, if: :homestore?
 
-  accepts_nested_attributes_for :products
+  #accepts_nested_attributes_for :products
 
   before_save :set_slug, if: -> { name_changed? || self.slug.blank? }
   after_save :load_api_products, if: -> { website_changed? || total_products_changed? }
