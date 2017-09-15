@@ -8,7 +8,7 @@ class PopulateProductsJob < ApplicationJob
      (store.total_products/ROWS).ceil.times do |page|
       response = HTTParty.get("#{website_handling(store)}/api/catalog_system/pub/products/search",
                  :query => "_from=#{page*ROWS}&_to=#{(page+1)*ROWS}").parsed_response
-      response.map do |r|
+      response.each do |r|
         product_list << {
           store_id: store.id,
           avatar: r["items"][0]["images"][0]["imageUrl"],
