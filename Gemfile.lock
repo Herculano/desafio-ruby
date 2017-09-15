@@ -295,6 +295,7 @@ DEPENDENCIES
   rails (~> 5.1.4)
   rails_admin (~> 1.2)
   rails_admin_rollincode (~> 1.0)
+  redis
   remotipart (~> 1.2)
   sass-rails (~> 5.0)
   searchkick
