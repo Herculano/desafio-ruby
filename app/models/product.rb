@@ -6,6 +6,7 @@ class Product
   field :installments, type: Integer
   field :avatar, type: String
   field :external_link, type: String
+  field :reindex, type: Boolean
 
   belongs_to :store
   validates_presence_of :name, :external_link, :avatar
