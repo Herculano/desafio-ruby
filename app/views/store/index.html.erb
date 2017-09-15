@@ -11,4 +11,6 @@
       <% end %>
     </div>
   <% end %>
+  <%= "Em breve lojas para você!" if @stores.empty? %>
+    <%= paginate @stores, theme: 'bootstrap' %>
 </div>
